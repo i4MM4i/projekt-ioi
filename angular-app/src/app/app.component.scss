@@ -1,0 +1,77 @@
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  flex: 50%;
+  flex-direction:column;
+  display:flex;
+}
+
+.buttons-under-image {
+  display:flex;
+  flex-direction: row;
+  flex: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.future-button {
+  margin: 13.5px;
+}
+
+.upload-button {
+  margin-bottom: 10px;
+  //margin-top: 20px;
+}
+
+.description {
+  margin: 10px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  width: 50%;
+}
+
+.background{
+  background-image:url('../assets/249.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+background-size: cover;
+height: 100%;
+}
+
+.bdrop {
+  background-color: #bbbbbbf2;
+  backdrop-filter: blur(4px);
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.preview-image {
+  margin-top: 60px;
+}

@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$light-blue-palette: (
+ 50: #E1F5FE,
+100:#B3E5FC,
+200:#81D4FA,
+300:#4FC3F7,
+400:#29B6F6,
+500:#03A9F4,
+600:#039BE5,
+700:#0288D1,
+800:#0277BD,
+900:#01579B,
+A100:#80D8FF,
+A200:#40C4FF,
+A400:#00B0FF,
+A700:#0091EA,
+contrast: (
+  50: rgba(black, 0.87),
+  100: rgba(black, 0.87),
+  200: rgba(black, 0.87),
+  300: rgba(black, 0.87),
+  400: rgba(black, 0.87),
+  500: rgba(black, 0.87),
+  600: rgba(black, 0.87),
+  700: rgba(black, 0.87),
+  800: white,
+  900: white,
+  A100: rgba(black, 0.87),
+  A200: rgba(black, 0.87),
+  A400: rgba(black, 0.87),
+  A700: rgba(black, 0.87),
+)
+);
+
+$blue-gray-palette: (
+ 50: #ECEFF1,
+100:#CFD8DC,
+200:#B0BEC5,
+300:#90A4AE,
+400:#78909C,
+500:#607D8B,
+600:#546E7A,
+700:#455A64,
+800:#37474F,
+900:#263238,
+contrast: (
+  50: rgba(black, 0.87),
+  100: rgba(black, 0.87),
+  200: rgba(black, 0.87),
+  300: rgba(black, 0.87),
+  400: rgba(black, 0.87),
+  500: rgba(black, 0.87),
+  600: white,
+  700: white,
+  800: white,
+  900: white,
+)
+);
+
+
+//$my-accent: mat.define-palette($light-blue-palette, 700);
+$my-accent: mat.define-palette(mat.$pink-palette, A700, A100, A400);
+$my-primary: mat.define-palette($blue-gray-palette, 600);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@include mat.all-component-themes($my-theme);
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bdrop {
+  backdrop-filter: blur(8px);
+}
+
+.bg-blue .mat-mdc-dialog-surface{
+  background: rgba(255,255,255, 0.8) !important;
+}
+
+/*mat-mdc-dialog-surface mdc-dialog__surface*/
+
+img {
+  border: 5px solid #555;
+}

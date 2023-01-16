@@ -1,0 +1,97 @@
+<div class="background">
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <div class="columns">
+    <div class="column">
+      <h1 class="center-text title">
+        Select a future
+      </h1>
+      <button
+        mat-raised-button
+        [color]="this.chosenFuture == 0 ? 'warn' : 'primary'"
+        (click)="changeFuture(0)"
+        type="button"
+        class="future-button"
+      >
+        Plants win
+        <mat-icon aria-hidden="false" fontIcon="forest"></mat-icon>
+
+      </button>
+      <button
+        mat-raised-button
+        [color]="this.chosenFuture == 1 ? 'warn' : 'primary'"
+        (click)="changeFuture(1)"
+        type="button"
+        class="future-button"
+      >
+        Flood
+        <mat-icon aria-hidden="false" fontIcon="water"></mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        [color]="this.chosenFuture == 2 ? 'warn' : 'primary'"
+        (click)="changeFuture(2)"
+        type="button"
+        class="future-button"
+      >
+        Fire
+        <mat-icon aria-hidden="false"  fontIcon="local_fire_department"></mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        [color]="this.chosenFuture == 3 ? 'warn' : 'primary'"
+        (click)="changeFuture(3)"
+        type="button"
+        class="future-button"
+      >
+        Trash
+        <mat-icon aria-hidden="false"  fontIcon="delete"></mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        [color]="this.chosenFuture == 4 ? 'warn' : 'primary'"
+        (click)="changeFuture(4)"
+        type="button"
+        class="future-button"
+      >
+        Apocalypse
+        <mat-icon aria-hidden="false"  fontIcon="error"></mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        [color]="this.chosenFuture == 5 ? 'warn' : 'primary'"
+        (click)="changeFuture(5)"
+        type="button"
+        class="future-button"
+      >
+        Ice age
+        <mat-icon aria-hidden="false"  fontIcon="snowing"></mat-icon>
+      </button>
+    </div>
+    <!--end of first column-->
+    <div class="column">
+      <img [src]="imageURL" [alt]="uploadForm.value.name" class="center preview-image"/>
+      <div class="buttons-under-image">
+        <button type="button" mat-raised-button (click)="fileInput.click()" class="upload-button" color="primary">
+          Upload an image
+          <mat-icon aria-hidden="false"  fontIcon="image"></mat-icon>
+        </button>
+        <input
+        hidden
+        (change)="showPreview($event)"
+        #fileInput
+        type="file"
+        accept="image/*"
+      />
+      <mat-form-field class="description" appearance="outline">
+        <mat-label>Short img description</mat-label>
+        <input matInput formControlName="environment" />
+      </mat-form-field>
+      </div>
+    </div>
+    <!--end of second column-->
+  </div>
+  <div class="submit-button-container">
+    <button mat-raised-button color="accent" type="submit" class="submit-button">Submit</button>
+  </div>
+</form>
+</div>
